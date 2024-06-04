@@ -6,17 +6,24 @@
 </head>
 <body>
 
+  <video id="backgroundVideo" autoplay muted loop>
+    <source src="" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
   <main>
     <section id="weather-wrapper">
       <h1>Weather App</h1>
       <div id="weather-search">
         <input id="search" type="text" placeholder="Search by city" />
-        <input id="submit" type="submit" value="Search" onclick="fetchWeather()" />
+        <input id="country" type="text" placeholder="Country code (e.g., US)" />
+        <button id="submit" onclick="fetchWeather()">Get Weather</button>
       </div>
+      
       <div id="weather-data" style="display: none;">
         <video id="weather-video" muted loop autoplay></video>
         <div id="weather-info">
-          <h2>City Not Found</h2>  <p>Please enter a valid city name.</p>
+          <!-- Weather info will be dynamically inserted here -->
         </div>
       </div>
     </section>

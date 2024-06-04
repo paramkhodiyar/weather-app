@@ -5,24 +5,37 @@
 }
 
 body {
-  background-image: url('https://i.pinimg.com/originals/4b/ea/93/4bea93084154c7a65dbd20de100707e9.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background: black; /* Fallback color */
+  font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
   height: 100vh;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#backgroundVideo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  animation: fadeIn 1s ease-in-out;
 }
 
 main {
   background-color: rgba(255, 255, 255, 0.85);
   position: relative;
-  top: 30%;
-  border: 1px solid;
+  /* top: 30%; */  /* Remove this line to center the box vertically */
+  border: 5px solid;
   border-radius: 5px;
-  min-width: 540px;
-  max-width: 50%;
-  margin: auto;
+  width: 60%;  /* Change this value to adjust the width */
+  margin: 0 auto;
   padding: 2em;
-  animation: fadeIn 1s ease-in-out;
+  animation: fadeIn 2s ease-in-out;
 }
 
 h1 {
@@ -41,7 +54,7 @@ h1 {
   width: 50%;
 }
 
-#search {
+#search, #country {
   border-radius: 5px 0 0 5px;
   border: wheat;
   padding: 10px;
@@ -68,6 +81,7 @@ h1 {
   gap: 12px;
   display: flex;
   flex-direction: column;
+  
 }
 
 #weather-data > video {
@@ -82,10 +96,8 @@ h1 {
   transition: opacity 0.5s ease-in-out;
 }
 
-#weather-data.show {
-  #weather-info {
-    opacity: 1;
-  }
+#weather-data.show #weather-info {
+  opacity: 1;
 }
 
 @keyframes fadeIn {
