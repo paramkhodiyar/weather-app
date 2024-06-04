@@ -25,25 +25,13 @@ async function fetchWeather() {
       const data = await response.json();
       if (data.length == 0) {
         console.log("Something went wrong here.");
-        weatherDataSection.innerHTML = `
+        weatherDataSection.innerHTML = ``; 
+        weatherDataSection.classList.add('animated');
         <div>
           <h2>Invalid Input: "${searchInput}"</h2>
           <p>Please try again with a valid <u>city name</u>.</p>
         </div>
-        `;
-        return;
-      } else {
-        return data[0];
-      }
-    }
-  
-    async function getWeatherData(lon, lat) {
-      const weatherURL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`;
-      const response = await fetch(weatherURL);
-      if (!response.ok) {
-        console.log("Bad response! ", response.status);
-        return;
-      }
+        const weatherURL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`;
       const data = await response.json();
       const currentTime = new Date().getTime() / 1000;
       const isDay = currentTime > data.sys.sunrise && currentTime < data.sys.sunset;
@@ -70,4 +58,4 @@ async function fetchWeather() {
       console.error("Error fetching weather data:", error);
     }
   }
-  
+}

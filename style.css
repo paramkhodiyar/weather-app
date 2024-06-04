@@ -22,6 +22,8 @@
     max-width: 50%;
     margin: auto;
     padding: 2em;
+    animation: fadeIn 1s ease-in-out;  
+
   }
   
   h1 {
@@ -72,3 +74,7 @@
     background-color: lightskyblue;
   }
   
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
