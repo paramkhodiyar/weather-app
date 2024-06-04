@@ -5,18 +5,22 @@
   <title>Weather App</title>
 </head>
 <body>
-   
-        <main>
-          <section id="weather-wrapper">
-            <h1>Weather App</h1>
-            <div id="weather-search">
-              <input id="search" type="text" placeholder="Search by city" />
-              <input id="submit" type="submit" onclick="fetchWeather()" value="Search" />
-            </div>
-            <div id="weather-data" style="display: none;"></div>
-          </section>
-        </main>
-        <script src="test.js"></script>
-     
+
+  <main>
+    <section id="weather-wrapper">
+      <h1>Weather App</h1>
+      <div id="weather-search">
+        <input id="search" type="text" placeholder="Search by city" />
+        <input id="submit" type="submit" value="Search" onclick="fetchWeather()" />
+      </div>
+      <div id="weather-data" style="display: none;">
+        <video id="weather-video" muted loop autoplay></video>
+        <div id="weather-info">
+          <h2>City Not Found</h2>  <p>Please enter a valid city name.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="test.js"></script>
 </body>
 </html>
