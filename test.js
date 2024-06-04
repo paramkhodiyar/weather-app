@@ -38,14 +38,13 @@ async function fetchWeather() {
       const backgroundImage = isDay ? "url(https://i.pinimg.com/originals/de/40/8c/de408c8c2e7f7c376cbc239ad2254189.png)" : "url(https://i.pinimg.com/originals/69/2f/35/692f3538fe4e900312f06bae72cef852.png)";
       document.body.style.backgroundImage = backgroundImage;
       weatherDataSection.style.display = "flex";
-      weatherDataSection.innerHTML = `
-      <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}.png" alt="${data.weather[0].description}" width="100" />
-      <div>
-        <h2>${data.name}</h2>
-        <p><strong>Temperature:</strong> ${Math.round(data.main.temp - 273.15)}°C</p>
-        <p><strong>Description:</strong> ${data.weather[0].description}</p>
-      </div>
-      `;
+      weatherDataSection.innerHTML = ``;
+      <><img src="https://openweathermap.org/img/wn/${data.weather[0].icon}.png" alt="${data.weather[0].description}" width="100" /><div>
+          <h2>${data.name}</h2>
+          <p><strong>Temperature:</strong> ${Math.round(data.main.temp - 273.15)}°C</p>
+          <p><strong>Description:</strong> ${data.weather[0].description}</p>
+        </div></>
+      ;
     }
   
     try {
